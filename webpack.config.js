@@ -5,10 +5,11 @@ let webpack = require("webpack");
 
 module.exports = {
     context: __dirname,
-    entry: ["./src/js/main.js"],
+    entry: "./src/js/main.js",
     output: {
-        path    : path.join(__dirname, "app", "js"),
-        filename: "main.js"
+        path      : path.join(__dirname, "app"),
+        publicPath: "/",
+        filename  : "js/main.js"
     },
     externals: {
         "window"      : true,
@@ -20,7 +21,7 @@ module.exports = {
         "electronvolt": true
     },
     plugins:
-        process.env.DEBUG ? [] : [
+        process.env.DEBUG === "true" ? [] : [
             new webpack.optimize.UglifyJsPlugin()
         ]
 };
