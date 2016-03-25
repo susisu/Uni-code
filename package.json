@@ -10,6 +10,7 @@
     "copy-cmp:pixijs": "cp bower_components/pixi.js/bin/pixi.min.js app/js/components/pixi.min.js",
     "copy-cmp:preloadjs": "cp bower_components/PreloadJS/lib/preloadjs-0.6.2.min.js app/js/components/preloadjs-0.6.2.min.js",
     "copy-cmp:soundjs": "cp bower_components/SoundJS/lib/soundjs-0.6.2.min.js app/js/components/soundjs-0.6.2.min.js",
+    "copy-cmp:ace": "mkdir -p app/js/components/ace && cp -r bower_components/ace-builds/src-min-noconflict/ app/js/components/ace/",
     "copy-cmp:loquat": "cp bower_components/loquat/dist/loquat.min.js app/js/components/loquat.min.js",
     "copy-cmp:electronvolt": "cp bower_components/electronvolt/dist/ev.min.js app/js/components/ev.min.js",
     "build": "npm run build:release",

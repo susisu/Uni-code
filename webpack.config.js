@@ -17,6 +17,7 @@ module.exports = {
         "createjs"    : true,
         "preloadjs"   : "createjs.PreloadJS",
         "soundjs"     : "createjs.SoundJS",
+        "ace"         : true,
         "loquat"      : true,
         "electronvolt": true
     },
