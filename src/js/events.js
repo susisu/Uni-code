@@ -43,9 +43,8 @@ ProgressEvent.prototype = Object.create(ev.Event.prototype, {
         }
     },
     progress: {
-        writable    : true,
         configurable: true,
-        getter: function () {
+        get: function () {
             return this.loaded / this.total;
         }
     }
