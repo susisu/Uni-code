@@ -12,7 +12,8 @@
     "node_modules",
     "bower_components",
     "dev",
-    "app/js"
+    "app/js",
+    "npm-debug.log"
   ],
   "dependencies": {
     "pixi.js": "https://github.com/pixijs/pixi.js.git#^3.0.10",
