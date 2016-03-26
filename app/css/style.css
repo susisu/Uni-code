@@ -45,7 +45,7 @@ body {
     z-index         : 1;
 }
 
-#editor {
+.editor {
     width : 800px;
     height: 450px;
 }
