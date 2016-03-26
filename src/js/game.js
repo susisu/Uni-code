@@ -12,9 +12,9 @@ function end() {
 var pixi = require("pixi");
 var ev   = require("electronvolt");
 
-function Game(stage, editor) {
+function Game(canvas, editor) {
     ev.EventDispatcher.call(this);
-    this._stage  = stage;
+    this._canvas = canvas;
     this._editor = editor;
 }
 
