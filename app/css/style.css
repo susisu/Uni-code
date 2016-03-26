@@ -48,3 +48,11 @@ body {
     height: 450px;
 }
 
+#page-footer {
+    position  : absolute;
+    top       : 100%;
+    width     : 784px;
+    margin    : 8px 0 24px;
+    padding   : 8px;
+    text-align: center;
+}
