@@ -3,13 +3,18 @@
 let path = require("path");
 let webpack = require("webpack");
 
+const DEBUG = process.env.DEBUG === "true";
+
 module.exports = {
+    debug: DEBUG,
+    devtool: DEBUG ? "#source-map" : "",
     context: __dirname,
     entry: "./src/js/main.js",
     output: {
         path      : path.join(__dirname, "app"),
         publicPath: "/",
-        filename  : "js/main.js"
+        filename  : "js/main.js",
+        pathInfo  : DEBUG
     },
     externals: {
         "window"      : true,
@@ -22,7 +27,7 @@ module.exports = {
         "electronvolt": true
     },
     plugins:
-        process.env.DEBUG === "true" ? [] : [
+        DEBUG ? [] : [
             new webpack.optimize.UglifyJsPlugin()
         ]
 };
