@@ -13,7 +13,8 @@
     "bower_components",
     "dev",
     "app/js",
-    "npm-debug.log"
+    "npm-debug.log",
+    "app/assets/*.otf"
   ],
   "dependencies": {
     "pixi.js": "https://github.com/pixijs/pixi.js.git#^3.0.10",

@@ -12,6 +12,8 @@ module.exports = Object.freeze({
     CANVAS_HEIGHT: 450,
     RESOLUTION   : window.devicePixelRatio,
 
+    FONT_FACE: "Makinas-Scrap-5",
+
     ASSETS_MANIFEST: [
         { id: "test", src:"assets/test.png" }
     ]

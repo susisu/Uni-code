@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+@font-face {
+    font-family: Makinas-Scrap-5;
+    src: url("../assets/Makinas-Scrap-5.otf") format("opentype");
+}
+
 html {
     height: 100%;
 }

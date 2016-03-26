@@ -1,4 +1,5 @@
 bower_components/
 dev/
 app/js/
+app/assets/*.otf
 npm-debug.log
