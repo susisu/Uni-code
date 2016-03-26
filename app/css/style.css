@@ -31,7 +31,8 @@ body {
     position: absolute;
     top     : 0;
     width   : 800px;
-    height  : 450px;    
+    height  : 450px;
+    z-index : 0;
 }
 
 #editor-window {
@@ -41,6 +42,7 @@ body {
     background-color: #c0c0c0;
     width           : 800px;
     height          : 450px;
+    z-index         : 1;
 }
 
 #editor {
