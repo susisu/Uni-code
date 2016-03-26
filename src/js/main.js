@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
         view       : canvas,
         antialias  : true,
         autoResize : true,
-        resolution : window.devicePixelRatio,
+        resolution : Config.RESOLUTION,
         transparent: false
     });
     var stage = new pixi.Container();
