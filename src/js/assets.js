@@ -15,6 +15,7 @@ var Events = require("./events.js");
 function Assets(manifest) {
     ev.EventDispatcher.call(this);
     this._queue = new createjs.LoadQueue();
+    this._queue.setMaxConnections(10);
     this._queue.loadManifest(manifest);
     var self = this;
     this._queue.on("progress", function (event) {
