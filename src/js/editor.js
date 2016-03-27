@@ -28,6 +28,20 @@ Editor.prototype = Object.create(ev.EventDispatcher.prototype, {
         writable    : true,
         configurable: true,
         value: Editor
+    },
+    open: {
+        writable    : true,
+        configurable: true,
+        value: function () {
+            this._editorWindow.style.display = "block";
+        }
+    },
+    close: {
+        writable    : true,
+        configurable: true,
+        value: function () {
+            this._editorWindow.style.display = "none";
+        }
     }
 });
 
