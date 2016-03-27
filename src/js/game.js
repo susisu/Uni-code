@@ -18,6 +18,10 @@ var GameScene = require("./scenes/game.js");
 function Game(canvas, editor) {
     ev.EventDispatcher.call(this);
 
+    function fade(changeScene) {
+        changeScene();
+    }
+
     var currentScene = null;
     showTitleScene();
 
@@ -28,9 +32,11 @@ function Game(canvas, editor) {
 
     function onStartGame() {
         currentScene.removeEventListener(TitleScene.START_GAME, onStartGame);
-        currentScene.close();
-        currentScene = null;
-        showGameScene();
+        fade(function () {
+            currentScene.close();
+            currentScene = null;
+            showGameScene();
+        });
     }
 
     function showGameScene() {
@@ -40,9 +46,11 @@ function Game(canvas, editor) {
 
     function onQuitGame() {
         currentScene.removeEventListener(GameScene.QUIT_GAME, onQuitGame);
-        currentScene.close();
-        currentScene = null;
-        showTitleScene();
+        fade(function () {
+            currentScene.close();
+            currentScene = null;
+            showTitleScene();
+        });
     }
 }
 
