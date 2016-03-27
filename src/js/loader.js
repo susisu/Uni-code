@@ -20,8 +20,8 @@ function Loader() {
     this._text = new pixi.Text(
         "",
         {
-            font : "18px " + Config.FONT_FACE + ", sans-serif",
-            fill : 0xf0f0f0
+            font: "18px " + Config.FONT_FACE + ", sans-serif",
+            fill: 0xf0f0f0
         }
     );
     this._text.resolution = Config.RESOLUTION;
