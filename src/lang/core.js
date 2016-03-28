@@ -7,9 +7,9 @@
 
 function end() {
     module.exports = Object.freeze({
-        Term : Term,
-        EvalR: EvalR,
-        EvalL: EvalL
+        Term      : Term,
+        Evaluable : Evaluable,
+        Assignable: Assignable
     });
 }
 
@@ -32,15 +32,16 @@ Term.prototype = Object.create(Object.prototype, {
     }
 });
 
-function EvalR(pos) {
+
+function Evaluable(pos) {
     Term.call(this, pos);
 }
 
-EvalR.prototype = Object.create(Term.prototype, {
+Evaluable.prototype = Object.create(Term.prototype, {
     constructor: {
         writable    : true,
         configurable: true,
-        value: EvalR
+        value: Evaluable
     },
     run: {
         writable    : true,
@@ -49,7 +50,7 @@ EvalR.prototype = Object.create(Term.prototype, {
             return this.eval(env, false);
         }
     },
-    "eval": {
+    eval: {
         writable    : true,
         configurable: true,
         value: function (env, tail) {
@@ -58,17 +59,18 @@ EvalR.prototype = Object.create(Term.prototype, {
     }
 });
 
-function EvalL(pos) {
-    EvalR.call(this, pos);
+
+function Assignable(pos) {
+    Evaluable.call(this, pos);
 }
 
-EvalL.prototype = Object.create(EvalR.prototype, {
+Assignable.prototype = Object.create(Evaluable.prototype, {
     constructor: {
         writable    : true,
         configurable: true,
-        value: EvalL
+        value: Assignable
     },
-    "evalL": {
+    assign: {
         writable    : true,
         configurable: true,
         value: function (env) {
