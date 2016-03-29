@@ -79,4 +79,25 @@ Assignable.prototype = Object.create(Evaluable.prototype, {
     }
 });
 
+
+function Literal(pos, value) {
+    Evaluable.call(this, pos);
+    this.value = value;
+}
+
+Literal.prototype = Object.create(Evaluable.prototype, {
+    constructor: {
+        writable    : true,
+        configurable: true,
+        value: Literal
+    },
+    eval: {
+        writable    : true,
+        configurable: true,
+        value: function (env, tail) {
+            return this.value;
+        }
+    }
+});
+
 end();
