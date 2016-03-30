@@ -100,4 +100,38 @@ Literal.prototype = Object.create(Evaluable.prototype, {
     }
 });
 
+
+function Variable(pos, name) {
+    Assignable.call(this, pos);
+    this.name = name;
+}
+
+Variable.prototype = Object.create(Assignable.prototype, {
+    constructor: {
+        writable    : true,
+        configurable: true,
+        value: Variable
+    },
+    eval: {
+        writable    : true,
+        configurable: true,
+        value: function (env, tail) {
+            if (env[this.name] === undefined) {
+                throw new Error("unbound variable: " + this.name);
+            }
+            return env[this.name].value;
+        }
+    },
+    assign: {
+        writable    : true,
+        configurable: true,
+        value: function (env) {
+            var name = this.name;
+            return function (value) {
+                Object.defineProperty(env[name], "value", value);
+            };
+        }
+    }
+});
+
 end();
